@@ -9,14 +9,14 @@ It started as a personal trading utility rather than a general-purpose trading f
 ## What it does
 
 - **1–4 leg option combinations** with configurable strikes, expirations, actions, ratios, and quantities
-- **Interactive Brokers integration** using both ib_insync and the official ibapi interface
+- **Interactive Brokers integration** using both `ib_insync` and the official `ibapi` interface
 - **Contract resolution** before market-data requests and order submission
 - **Market-data preview** with bid / ask / last prices for individual legs
 - **Estimated combination pricing** from individual leg quotes
 - **Incremental limit-price adjustment** toward a configured final price
 - **Partial-fill tracking** with filled / remaining quantities and average fill price
 - **Manual confirmation** immediately before order submission
-- **Voice notifications** through pyttsx3
+- **Voice notifications** through `pyttsx3`
 - **IB BAG contracts** for multi-leg combination orders
 
 The repository contains concrete 1-, 2-, 3-, and 4-leg examples, while the underlying utilities support configurable combinations.
@@ -48,21 +48,21 @@ HedgeTools/
 └── aiTips/
 ```
 
-The numbered scripts demonstrate different option-leg configurations. The IBOption modules contain reusable order-management and market-data logic.
+The numbered scripts demonstrate different option-leg configurations. The `IBOption*` modules contain reusable order-management and market-data logic.
 
 ## Requirements
 
 - Python 3
 - Interactive Brokers TWS or IB Gateway
 - An IBKR account with the required market-data and trading permissions
-- ib_insync
-- ibapi
-- pyttsx3 for optional voice notifications
+- `ib_insync`
+- `ibapi`
+- `pyttsx3` for optional voice notifications
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-# Windows: .venv\Scripts\activate
+# Windows: .venv\\Scripts\\activate
 pip install ib_insync ibapi pyttsx3
 ```
 
@@ -74,7 +74,19 @@ Configure TWS / IB Gateway to accept API connections before running an example.
 python IBOption2Leg.py
 ```
 
-Before running, review the example's order parameters: spread_symbol, leg*_expiry, leg*_strike, leg*_right, leg*_action, combo_quantity, combo_init_price, combo_price_final, combo_price_step.
+Before running, review the example's order parameters:
+
+```text
+spread_symbol
+leg*_expiry
+leg*_strike
+leg*_right
+leg*_action
+combo_quantity
+combo_init_price
+combo_price_final
+combo_price_step
+```
 
 These values define the actual order.
 
